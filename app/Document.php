@@ -107,6 +107,8 @@ class Document extends Model
     // The vocabulary table gets a number instead
     // of the term.  Is it the term id?  Is it 
     // some count?  I'm not clear.
+    // Update: this has now been fixed, but a test
+    // would be good, anyway.
     
     // We take the title of the document, followed by
     // the content of the document, as a long string.
@@ -130,12 +132,19 @@ class Document extends Model
             },
             $words
         );
+        // Eliminate the empty string.
+        $nonempty_words = array_filter(
+            $clean_words,
+            function ($w) {
+                return ! empty($w);
+            }
+        );
         // Lower-case
         $lower_words = array_map(
             function ($w) {
                 return strtolower($w);
             },
-            $clean_words
+            $nonempty_words
         );
         $stems = array_map(
             function ($w) {
