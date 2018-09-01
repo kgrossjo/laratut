@@ -12,7 +12,7 @@
 */
 
 Auth::routes();
-
 Route::get('/', 'HomeController@index')->name('home');
-
 Route::resource('documents', 'DocumentsController');
+Route::get('/search', 'SearchController@showSearchForm')->name('search.form');
+Route::post('/search', 'SearchController@executeSearch')->name('search.execute');

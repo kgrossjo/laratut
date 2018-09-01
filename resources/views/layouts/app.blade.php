@@ -44,6 +44,11 @@
                     			{{ __('Add Document') }}
                     		</a>
                     	</li>
+                    	<li class="nav-item">
+                    		<a class="nav-link" href="{{ route('search.form') }}">
+                    			{{ __('Search') }}
+                    		</a>
+                    	</li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
