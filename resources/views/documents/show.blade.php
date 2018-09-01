@@ -8,6 +8,12 @@
                 <div class="card-header">Show Document</div>
 
                 <div class="card-body">
+					<p>
+						I think it makes no sense to show the document like this.
+						When folks click on the id of the document in the list
+						documents view, they should land on the edit view immediately.
+						But at least I can show that I know how to show a document...
+					</p>
                 	<div class="row">
                 		<div class="col-2">
                 			ID
