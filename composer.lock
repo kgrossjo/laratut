@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5bca48e56bbf3a25645858fcab9c285",
+    "content-hash": "100b7a9303f6795a6ef69d0f4bf13c02",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -816,6 +816,50 @@
                 "psr-3"
             ],
             "time": "2017-06-19T01:22:40+00:00"
+        },
+        {
+            "name": "nadar/stemming",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nadar/stemming.git",
+                "reference": "5b774d9486fe53d40aabf80c6925c926b40cf323"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nadar/stemming/zipball/5b774d9486fe53d40aabf80c6925c926b40cf323",
+                "reference": "5b774d9486fe53d40aabf80c6925c926b40cf323",
+                "shasum": ""
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nadar\\Stemming\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Basil Suter",
+                    "homepage": "https://github.com/nadar",
+                    "role": "Creator"
+                }
+            ],
+            "description": "Stemming by Language",
+            "homepage": "https://github.com/nadar/stemming",
+            "keywords": [
+                "php",
+                "stemmer",
+                "stemming"
+            ],
+            "time": "2017-03-26T14:30:22+00:00"
         },
         {
             "name": "nesbot/carbon",

@@ -53,6 +53,8 @@ class DocumentsController extends Controller
         $d->title = $request->get('title');
         $d->content = $request->get('content');
         $d->save();
+        $d->removeDocumentFromIndex();
+        $d->addDocumentToIndex();
         return redirect('documents')->with('success', 'Document has been added.');
     }
 
@@ -90,6 +92,8 @@ class DocumentsController extends Controller
         $document->title = $request->get('title');
         $document->content = $request->get('content');
         $document->save();
+        $document->removeDocumentFromIndex();
+        $document->addDocumentToIndex();
         return redirect('documents')->with('success', 'Document has been updated');
     }
 
@@ -101,6 +105,6 @@ class DocumentsController extends Controller
      */
     public function destroy(Document $document)
     {
-        //
+        throw new \Exception('Argh');
     }
 }
