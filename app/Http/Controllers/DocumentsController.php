@@ -25,7 +25,6 @@ class DocumentsController extends Controller
     public function index()
     {
         $docs = Document::all();
-        Log::debug("Silence is foo!");
         return view('documents.index', ['documents' => $docs]);
     }
 
@@ -36,7 +35,6 @@ class DocumentsController extends Controller
      */
     public function create()
     {
-        Log::debug("create here");
         return view('documents.create');
     }
 
@@ -48,7 +46,6 @@ class DocumentsController extends Controller
      */
     public function store(Request $request)
     {
-        Log::debug("store here");
         $d = new Document();
         $d->title = $request->get('title');
         $d->content = $request->get('content');
