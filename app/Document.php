@@ -2,8 +2,8 @@
 
 namespace App;
 
+use \App\Helper;
 use Illuminate\Database\Eloquent\Model;
-use \Nadar\Stemming\Stemm;
 
 class Document extends Model
 {
@@ -120,38 +120,7 @@ class Document extends Model
     {
         $result = [];
         $s = $this->title . ' ' . $this->content;
-        $words = preg_split("/[ .,;:()!?-]+/", $s);
-        // If the word begins or ends with a quote, remove the
-        // quote.  (In this way, we will keep the apostrophe
-        // in "don't", for example.)
-        $clean_words = array_map(
-            function ($w) {
-                $w = preg_replace("/^['\"]+/", "", $w);
-                $w = preg_replace("/['\"]+$/", "", $w);
-                return $w;
-            },
-            $words
-        );
-        // Eliminate the empty string.
-        $nonempty_words = array_filter(
-            $clean_words,
-            function ($w) {
-                return ! empty($w);
-            }
-        );
-        // Lower-case
-        $lower_words = array_map(
-            function ($w) {
-                return strtolower($w);
-            },
-            $nonempty_words
-        );
-        $stems = array_map(
-            function ($w) {
-                return Stemm::stem($w, 'en');
-            },
-            $lower_words
-        );
+        $stems = Helper::splitStringIntoStems($s);
         foreach ($stems as $stem) {
             if (! array_key_exists($stem, $result)) {
                 $result[$stem] = 0;
